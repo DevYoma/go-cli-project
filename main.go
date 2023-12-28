@@ -51,11 +51,22 @@ func prompOptions(b bill){
 
 			fmt.Println("Items added - ",  name, price)
 			prompOptions(b)
-		}else if(opt == "s"){
-			fmt.Println("SAVE BILL")
 		}else if(opt == "t"){
 			tip, _ := getInput("Enter tip amount ($): ", reader)
-			fmt.Println(tip)
+
+			t, err := strconv.ParseFloat(tip, 64)
+			if err != nil{
+				fmt.Println("The tip must be a number")
+				prompOptions(b)
+			}
+
+			b.updateTip(t)
+
+			fmt.Println("Tip added - ", tip)
+			prompOptions(b)
+		}else if(opt == "s"){
+			b.save()
+			fmt.Println("FILE SAVED - ", b)
 		}
 	}
 }

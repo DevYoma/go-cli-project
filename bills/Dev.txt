@@ -1,0 +1,6 @@
+Bill breakdown: 
+Coffee:                   ...$4.5 
+Red Meat:                 ...$50 
+Chocolate:                ...$40 
+tip:                      ...$5
+total:                    ...$99.50
